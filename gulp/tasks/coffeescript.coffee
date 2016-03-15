@@ -51,4 +51,4 @@ module.exports = (gulp, $, config) ->
 			notifier.notify
 				message: "Error: " + err.message
 			$.util.log $.util.colors.red err.message
-		.pipe gulp.dest config.paths.client.js.entry + "fixtures"
+		.pipe gulp.dest config.paths.js.entry + "fixtures"

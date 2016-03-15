@@ -10,6 +10,8 @@ module.exports = (gulp, $, config) ->
 
 	gulp.task "dev", ["build"], ->
 
+		gulp.start "service-worker"
+
 		app = express()
 		lr = tinylr()
 		app.use require("connect-livereload")()
@@ -43,10 +45,10 @@ module.exports = (gulp, $, config) ->
 			config.paths.lib.dest + "/*.{js,css}"
 		], notifyLivereload
 
-		$.watch [config.paths.client.js.entry + "**/*.coffee", config.paths.client.js.entry + "**/!*.test.coffee"], ->
+		$.watch [config.paths.js.entry + "**/*.coffee", config.paths.js.entry + "**/!*.test.coffee"], ->
 			gulp.start "coffeescript"
 
-		$.watch [config.paths.client.css.entry + "**/*.styl", config.paths.client.css.entry + "**/*.html"], ->
+		$.watch [config.paths.css.entry + "**/*.styl", config.paths.css.entry + "**/*.html"], ->
 			gulp.start "stylus"
 
 		$.watch config.paths.fonts.entry + "**/*.{woff,ttf,otf,svg}", ->

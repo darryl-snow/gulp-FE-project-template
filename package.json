@@ -70,9 +70,9 @@
     "node": ">=0.10.0"
   },
   "scripts": {
-	  "build": "gulp prod",
-      "start": "gulp dev",
-      "test": "gulp test",
+    "build": "gulp prod",
+    "start": "gulp dev",
+    "test": "gulp test"
   },
   "private": true
 }

@@ -71,4 +71,4 @@ module.exports = (gulp, $, config) ->
 
 		config.env = "prod"
 
-		runSequence "reset", "build", "prod-optimise", "prod-inline-css"
+		runSequence "reset", "build", "prod-optimise", "prod-inline-css", "service-worker"
