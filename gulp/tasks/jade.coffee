@@ -6,7 +6,7 @@ module.exports = (gulp, $, config) ->
 
 	gulp.task "jade", ->
 
-		gulp.src config.paths.html.entry + "*.jade"
+		gulp.src [config.paths.html.entry + "*.jade", !config.paths.html.entry + "**/*.jade"]
 		.pipe $.plumber()
 		.pipe $.jade
 			pretty: true
@@ -14,6 +14,7 @@ module.exports = (gulp, $, config) ->
 				description: config.description
 				keywords: config.keywords
 				title: config.names.project
+				url: config.url
 		.on "error", (err) ->
 			notifier.notify
 				message: "Error: " + err.message

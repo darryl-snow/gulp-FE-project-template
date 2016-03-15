@@ -1,0 +1,68 @@
+doctype
+html(amp, lang="en")
+
+	head
+
+		meta(charset="utf-8")
+
+		title Darryl Snow - Your Web Expert
+
+		meta(http-equiv="X-UA-Compatible", content="IE=edge")
+		meta(name="description", content="#{description}")
+		meta(name="author", content="Your Name")
+		meta(name="viewport", content="width=device-width,minimum-scale=1,initial-scale=1")
+		meta(name="robots", content="index,follow")
+
+		link(rel="canonical", href="#{url}")
+		link(rel="alternate amphtml", href="#{url}/amp", type="text/html")
+		link(rel="me", href="mailto:your@server.com")
+		link(rel="me", href="sms:+0000000000000")
+		link(rel="me", href="https://twitter.com/yourusername")
+		link(rel="token_endpoint", href="https://tokens.indieauth.com/token")
+		link(rel="token_endpoint", href="https://indiecert.net/token")
+		link(rel="openid.server", href="https://indieauth.com/openid")
+		link(rel="openid.delegate", href="#{url}/")
+		link(rel="shortcut icon", href="/images/icons/favicon.ico", type="image/ico")
+		link(rel="shortcut icon", href="/images/icons/favicon-96x96.png", type="image/png")
+		link(rel="apple-touch-icon", href="/images/icons/favicon-96x96.png", type="image/png")
+
+		<style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+		style(amp-custom).
+			// your custom styles here
+
+		script(type="application/ld+json").
+			{
+				"@context": "http://schema.org",
+				"@type": "NewsArticle",
+				"mainEntityOfPage": "https://yourweb.expert/",
+				"headline": "Darryl Snow - Web Expert",
+				"datePublished": "2016-03-14T12:00:00Z",
+				"dateModified": "2016-03-14T12:00:00Z",
+				"description": "Professional web designer, developer, and project manager, based in Kunming, China.",
+				"author": {
+				  "@type": "Person",
+				  "name": "Darryl Snow"
+				},
+				"publisher": {
+				  "@type": "Organization",
+				  "name": "Darryl Snow",
+				  "logo": {
+					"@type": "ImageObject",
+					"url": "https://yourweb.expert/images/darryl-snow.jpg",
+					"width": 350,
+					"height": 350
+				  }
+				},
+				"image": {
+				  "@type": "ImageObject",
+				  "url": "https://yourweb.expert/images/darryl-snow.jpg",
+				  "height": 350,
+				  "width": 350
+				}
+			}
+
+		script(async, src="https://cdn.ampproject.org/v0.js")
+
+	body
+	
+		//- use amp-img instead of img
