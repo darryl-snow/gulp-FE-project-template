@@ -58,6 +58,15 @@ module.exports = (gulp, $, config) ->
 
 			callback()
 
+	gulp.task "service-worker", (callback) ->
+
+		swPrecache = require "sw-precache"
+
+		swPrecache.write config.paths.build + "/service-worker.js",
+			staticFileGlobs: [config.paths.build + "/**/*.{js,html,css,png,jpg,gif,webp,ico,svg,xml,json}" ]
+			stripPrefix: config.paths.build
+		, callback
+
 	gulp.task "prod", ->
 
 		config.env = "prod"

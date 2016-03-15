@@ -10,6 +10,9 @@ height: 30px;
 padding: 5px
 """
 
+# Register Service Worker
+require "./service-worker.coffee"
+
 # Non-react component
 MyComponent = require "./components/my-component/my-component.coffee"
 
