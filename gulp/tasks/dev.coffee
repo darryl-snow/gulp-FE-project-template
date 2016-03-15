@@ -43,7 +43,7 @@ module.exports = (gulp, $, config) ->
 			config.paths.lib.dest + "/*.{js,css}"
 		], notifyLivereload
 
-		$.watch config.paths.js.entry + "**/*.coffee", ->
+		$.watch [config.paths.client.js.entry + "**/*.coffee", config.paths.client.js.entry + "**/!*.test.coffee"], ->
 			gulp.start "coffeescript"
 
 		$.watch config.paths.css.entry + "**/*.styl", ->
@@ -73,9 +73,9 @@ module.exports = (gulp, $, config) ->
 				for filepath in inheritance.files
 					filepath = "./" + filepath
 					dependants.push filepath
-					
-				dependants = dependants.concat filter	
-					
+
+				dependants = dependants.concat filter
+
 				gulp.src dependants
 				.pipe $.plumber()
 				.pipe $.jade
