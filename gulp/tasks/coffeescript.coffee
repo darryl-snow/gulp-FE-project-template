@@ -37,3 +37,18 @@ module.exports = (gulp, $, config) ->
 				showFiles: true
 			.pipe $.if config.env is "dev", $.sourcemaps.write "./"
 			.pipe gulp.dest config.paths.js.dest
+
+		# Get fixtures for unit testing
+		gulp.src config.paths.html.entry + "components/*.jade"
+		.pipe $.plumber()
+		.pipe $.jade
+			pretty: true
+			data:
+				description: config.description
+				keywords: config.keywords
+				title: config.names.project
+		.on "error", (err) ->
+			notifier.notify
+				message: "Error: " + err.message
+			$.util.log $.util.colors.red err.message
+		.pipe gulp.dest config.paths.client.js.entry + "fixtures"
