@@ -70,7 +70,7 @@
     "node": ">=0.10.0"
   },
   "scripts": {
-	  "build": "gulp prod && gulp prod-optimise",
+	  "build": "gulp prod",
       "start": "gulp dev",
       "test": "gulp test",
   },
