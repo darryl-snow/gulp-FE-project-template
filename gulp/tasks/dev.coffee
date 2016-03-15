@@ -46,7 +46,7 @@ module.exports = (gulp, $, config) ->
 		$.watch [config.paths.client.js.entry + "**/*.coffee", config.paths.client.js.entry + "**/!*.test.coffee"], ->
 			gulp.start "coffeescript"
 
-		$.watch config.paths.css.entry + "**/*.styl", ->
+		$.watch [config.paths.client.css.entry + "**/*.styl", config.paths.client.css.entry + "**/*.html"], ->
 			gulp.start "stylus"
 
 		$.watch config.paths.fonts.entry + "**/*.{woff,ttf,otf,svg}", ->
