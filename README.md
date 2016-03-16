@@ -2,11 +2,21 @@
 
 Starter template for front-end projects using:
 * Jade
-* Stylus (with automatically generated styleguide)
+* Stylus
 * CoffeeScript
 * Gulp
 * React
 * Unit testing with Karma & Jasmine
+
+## Features
+
+* Livereload
+* Development source maps
+* Automatically generated living style guide
+* Unit tests
+* Offline functionality with service worker
+* Full-minified and cache-busted assets for production build
+* Minimal CSS framework with flexbox grid
 
 ## Prerequisites
 
@@ -15,6 +25,7 @@ Starter template for front-end projects using:
 
 ```
 npm install -g gulp
+npm install
 ```
 
 ## Development instructions
