@@ -4,12 +4,13 @@ module.exports = (gulp, $, config) ->
 
 	gulp.task "accessibility", ->
 
-		gulp.src config.paths.build + "/!styles/*.html"
+		gulp.src config.paths.client.build + "/*.html"
 		.pipe $.accessibility
 			accessibilityLevel: "WCAG2A"
+			force: true
 			reportLevels:
 				error: true
 				notice: false
-				warning: true
-			reportLocation: config.paths.build + "/reports"
+				warning: false
+			reportLocation: config.paths.client.build + "/reports"
 			reportType: "json"

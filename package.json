@@ -21,6 +21,7 @@
     "critical": "^0.6.0",
     "express": "^4.10.6",
     "gulp": "^3.8.10",
+    "gulp-accessibility": "^2.0.1",
     "gulp-autoprefixer": "^1.0.1",
     "gulp-clean": "^0.3.1",
     "gulp-coffeelint-cjsx": "0.0.3",
@@ -71,7 +72,7 @@
   },
   "scripts": {
     "build": "gulp prod",
-	"serve": "cd ./public && python -m SimpleHTTPServer",
+    "serve": "cd ./public && python -m SimpleHTTPServer",
     "start": "gulp dev",
     "test": "gulp test"
   },
