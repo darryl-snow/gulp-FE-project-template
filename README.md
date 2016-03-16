@@ -26,6 +26,9 @@ npm install -g gulp
 * gulp test             (run unit tests)
 * gulp accessibility    (check against WCAG2 guidelines)
 * gulp pagespeed        (test against Google pagespeed)
+* npm run serve			(run a server for testing production build)
+* npm start				(same as gulp dev)
+* npm test				(same as gulp test)
 
 (Note: production build will not include source maps, will minify all static assets, strip out unused css, and inline above-the-fold css, as well as add cache-busting hashes to asset file names)
 

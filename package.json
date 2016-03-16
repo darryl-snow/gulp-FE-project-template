@@ -71,6 +71,7 @@
   },
   "scripts": {
     "build": "gulp prod",
+	"serve": "cd ./public && python -m SimpleHTTPServer",
     "start": "gulp dev",
     "test": "gulp test"
   },

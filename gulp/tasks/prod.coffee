@@ -25,10 +25,21 @@ module.exports = (gulp, $, config) ->
 				$.size
 					showFiles: true
 			]
-			html:[$.htmlmin collapseWhitespace: true]
+			html: [-> $.htmlmin
+				collapseWhitespace: true
+				minifyCSS: true
+				minifyJS: true
+			]
 		.pipe gulp.dest config.paths.build
 		.pipe $.rev.manifest()
 		.pipe gulp.dest config.paths.css.dest
+
+		gulp.src config.paths.html.dest + "/*.html"
+		.pipe $.htmlmin
+			collapseWhitespace: true
+			minifyCSS: true
+			minifyJS: true
+		.pipe gulp.dest config.paths.build
 
 	gulp.task "prod-inline-css", (callback) ->
 
@@ -58,17 +69,28 @@ module.exports = (gulp, $, config) ->
 
 			callback()
 
-	gulp.task "service-worker", (callback) ->
+	gulp.task "service-worker", ->
 
 		swPrecache = require "sw-precache"
 
 		swPrecache.write config.paths.build + "/service-worker.js",
 			staticFileGlobs: [config.paths.build + "/**/*.{js,html,css,png,jpg,gif,webp,ico,svg,xml,json}" ]
 			stripPrefix: config.paths.build
-		, callback
 
 	gulp.task "prod", ->
 
 		config.env = "prod"
 
-		runSequence "reset", "build", "prod-optimise", "prod-inline-css", "service-worker"
+		runSequence "reset", "build", ->
+
+			setTimeout ->
+
+				runSequence "prod-optimise", ->
+
+					setTimeout ->
+
+						runSequence "prod-inline-css", "service-worker"
+
+					, 10000
+
+			, 10000
