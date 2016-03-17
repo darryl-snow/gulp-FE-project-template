@@ -13,10 +13,14 @@ Starter template for front-end projects using:
 * Livereload
 * Development source maps
 * Automatically generated living style guide
+* Inline critical CSS
 * Unit tests
 * Offline functionality with service worker
-* Full-minified and cache-busted assets for production build
+* Full-minified and cache-busted assets for production build (e.g. main.min.q8ftyfeyefb.css)
 * Minimal CSS framework with flexbox grid
+* Performance budget
+* Coding, accessibility, and performance guidelines
+* Code linting
 
 ## Prerequisites
 
